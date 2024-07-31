@@ -58,41 +58,28 @@ public class TeamGUI {
             String managerName = managerNameField.getText();
             if (name.isEmpty() || city.isEmpty() || managerName.isEmpty()) {
                 JOptionPane.showMessageDialog(frame, "Please fill in all fields!");
-                return;
             }
             else if (teamNumber < 0) {
                 JOptionPane.showMessageDialog(frame, "Team number must be a positive integer!");
-                return;
             }
             else if (teamNumber > 999) {
                 JOptionPane.showMessageDialog(frame, "Team number must be less than 1000!");
-                return;
             }
             else if (name.length() > 50) {
                 JOptionPane.showMessageDialog(frame, "Name must be less than 50 characters!");
-                return;
             }
             else if (city.length() > 50) {
                 JOptionPane.showMessageDialog(frame, "City must be less than 50 characters!");
-                return;
             }
             else if (managerName.length() > 50) {
                 JOptionPane.showMessageDialog(frame, "Manager name must be less than 50 characters!");
-                return;
             }
             else {
-                try {
-                    teamManager.addTeam(teamNumber, name, city, managerName);
-                } catch (ClassNotFoundException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                }
                 try {
                     teamManager.addTeam(teamNumber, name, city, managerName);
                     JOptionPane.showMessageDialog(frame, "Team added successfully!");
 
                 } catch (HeadlessException | ClassNotFoundException e1) {
-                    // TODO Auto-generated catch block
                     JOptionPane.showMessageDialog(frame, "Failed to add team!");
                     e1.printStackTrace();
                 }
