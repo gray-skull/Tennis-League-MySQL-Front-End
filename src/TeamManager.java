@@ -24,4 +24,25 @@ public class TeamManager {
             return false;
         }
     }
+
+    // method to add a player to the database
+    public boolean addPlayer(int leagueWideNumber, String name, int age) throws ClassNotFoundException {
+        String sql = "INSERT INTO Player (LeagueWideNumber, Name, Age) VALUES (?, ?, ?)";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, leagueWideNumber);
+            pstmt.setString(2, name);
+            pstmt.setInt(3, age);
+
+            pstmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            Console console = System.console();
+            console.printf("Error: %s\n", e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
