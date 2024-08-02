@@ -1,7 +1,10 @@
 import java.io.Console;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlayerManager {
     // method to add a player to the database
@@ -20,7 +23,6 @@ public class PlayerManager {
         } catch (SQLException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
             return false;
         }
     }
@@ -42,27 +44,34 @@ public class PlayerManager {
         } catch (SQLException | ClassNotFoundException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
             return false;
         }
     }
 
-    public boolean readPlayer(int PlayerID) {
+    public List<Object[]> readPlayer(int PlayerID) {
         // method to read a player from the database
         String sql = "SELECT * FROM Player WHERE PlayerID = ?";
+        List<Object[]> playerDetails = new ArrayList<>();
 
         try (Connection conn = DatabaseConnection.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, PlayerID);
-
-            return pstmt.executeQuery().next();
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    playerDetails.add(new Object[]{
+                        rs.getInt("PlayerID"),
+                        rs.getInt("LeagueWideNumber"),
+                        rs.getString("Name"),
+                        rs.getInt("Age")
+                    });
+                }
+            }
         } catch (SQLException | ClassNotFoundException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
-            return false;
         }
+        return playerDetails;
     }
 
     public boolean deletePlayer(int PlayerID) {
@@ -83,7 +92,6 @@ public class PlayerManager {
         } catch (SQLException | ClassNotFoundException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
             return false;
         }
     }
@@ -101,8 +109,32 @@ public class PlayerManager {
         } catch (SQLException | ClassNotFoundException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
             return false;
         }
     }
+
+    public List<Object[]> readAllPlayers() {
+        // method to read all players from the database
+        String sql = "SELECT * FROM Player";
+        List<Object[]> playerDetails = new ArrayList<>();
+
+        try (Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                playerDetails.add(new Object[]{
+                    rs.getInt("PlayerID"),
+                    rs.getInt("LeagueWideNumber"),
+                    rs.getString("Name"),
+                    rs.getInt("Age")
+                });
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            Console console = System.console();
+            console.printf("Error: %s\n", e.getMessage());
+        }
+        return playerDetails;
+    }
+    
 }

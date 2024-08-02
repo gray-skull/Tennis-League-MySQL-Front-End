@@ -24,7 +24,6 @@ public class TeamManager {
         } catch (SQLException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
             return false;
         }
     }
@@ -51,7 +50,6 @@ public class TeamManager {
         } catch (SQLException | ClassNotFoundException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
         }
         return teamDetails;
     }
@@ -73,7 +71,6 @@ public class TeamManager {
         } catch (SQLException | ClassNotFoundException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
             return false;
         }
     }
@@ -92,7 +89,6 @@ public class TeamManager {
         } catch (SQLException | ClassNotFoundException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
             return false;
         }
     }
@@ -110,8 +106,31 @@ public class TeamManager {
         } catch (SQLException | ClassNotFoundException e) {
             Console console = System.console();
             console.printf("Error: %s\n", e.getMessage());
-            e.printStackTrace();
             return false;
         }
 	}
+
+    public List<Object[]> readAllTeams() {
+        // method to read all teams from the database
+        String sql = "SELECT * FROM Team";
+        List<Object[]> teamDetails = new ArrayList<>();
+
+        try (Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                teamDetails.add(new Object[]{
+                    rs.getInt("TeamNumber"),
+                    rs.getString("Name"),
+                    rs.getString("City"),
+                    rs.getString("ManagerName")
+                });
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            Console console = System.console();
+            console.printf("Error: %s\n", e.getMessage());
+        }
+    return teamDetails;
+    }
 }
