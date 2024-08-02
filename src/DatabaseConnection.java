@@ -11,7 +11,7 @@ public class DatabaseConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            System.out.println("MySQL JDBC Driver not found. Include it in your library path ");
+            System.out.println("MySQL JDBC Driver not found.");
             e.printStackTrace();
             throw e;
         }
