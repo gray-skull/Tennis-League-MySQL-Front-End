@@ -36,7 +36,7 @@ public class TeamGUI {
     private JPanel readAllCoachesPanel;
     private JScrollPane scrollPane;
 
-    private JTextField teamNumberField;
+    /*private JTextField teamNumberField;
     private JTextField nameField;
     private JTextField cityField;
     private JTextField managerNameField;
@@ -47,7 +47,8 @@ public class TeamGUI {
     private JTextField coachNameField;
     private JTextField telephoneNumberField;
     private JTextField coachTeamNumberField;
-    
+    */ 
+
     private final TeamManager teamManager;
     private final PlayerManager playerManager;
     private final CoachManager coachManager;
@@ -477,7 +478,7 @@ public class TeamGUI {
         teamNumberLabel.setBounds(20, 20, 100, 25);
         createTeamPanel.add(teamNumberLabel);
 
-        teamNumberField = new JTextField();
+        JTextField teamNumberField = new JTextField();
         teamNumberField.setBounds(150, 20, 200, 25);
         createTeamPanel.add(teamNumberField);
 
@@ -485,7 +486,7 @@ public class TeamGUI {
         nameLabel.setBounds(20, 60, 100, 25);
         createTeamPanel.add(nameLabel);
 
-        nameField = new JTextField();
+        JTextField nameField = new JTextField();
         nameField.setBounds(150, 60, 200, 25);
         createTeamPanel.add(nameField);
 
@@ -493,7 +494,7 @@ public class TeamGUI {
         cityLabel.setBounds(20, 100, 100, 25);
         createTeamPanel.add(cityLabel);
 
-        cityField = new JTextField();
+        JTextField cityField = new JTextField();
         cityField.setBounds(150, 100, 200, 25);
         createTeamPanel.add(cityField);
 
@@ -501,7 +502,7 @@ public class TeamGUI {
         managerNameLabel.setBounds(20, 140, 100, 25);
         createTeamPanel.add(managerNameLabel);
 
-        managerNameField = new JTextField();
+        JTextField managerNameField = new JTextField();
         managerNameField.setBounds(150, 140, 200, 25);
         createTeamPanel.add(managerNameField);
 
@@ -563,7 +564,7 @@ public class TeamGUI {
         leagueWideNumberLabel.setBounds(20, 20, 150, 25);
         createPlayerPanel.add(leagueWideNumberLabel);
 
-        leagueWideNumberField = new JTextField();
+        JTextField leagueWideNumberField = new JTextField();
         leagueWideNumberField.setBounds(200, 20, 150, 25);
         createPlayerPanel.add(leagueWideNumberField);
 
@@ -571,7 +572,7 @@ public class TeamGUI {
         nameLabel.setBounds(20, 60, 100, 25);
         createPlayerPanel.add(nameLabel);
 
-        nameField = new JTextField();
+        JTextField nameField = new JTextField();
         nameField.setBounds(200, 60, 150, 25);
         createPlayerPanel.add(nameField);
 
@@ -579,7 +580,7 @@ public class TeamGUI {
         ageLabel.setBounds(20, 100, 100, 25);
         createPlayerPanel.add(ageLabel);
 
-        ageField = new JTextField();
+        JTextField ageField = new JTextField();
         ageField.setBounds(200, 100, 150, 25);
         createPlayerPanel.add(ageField);
 
@@ -639,7 +640,7 @@ public class TeamGUI {
         coachNameLabel.setBounds(20, 20, 100, 25);
         createCoachPanel.add(coachNameLabel);
 
-        coachNameField = new JTextField();
+        JTextField coachNameField = new JTextField();
         coachNameField.setBounds(150, 20, 200, 25);
         createCoachPanel.add(coachNameField);
 
@@ -647,7 +648,7 @@ public class TeamGUI {
         telephoneNumberLabel.setBounds(20, 60, 100, 25);
         createCoachPanel.add(telephoneNumberLabel);
 
-        telephoneNumberField = new JTextField();
+        JTextField telephoneNumberField = new JTextField();
         telephoneNumberField.setBounds(150, 60, 200, 25);
         createCoachPanel.add(telephoneNumberField);
 
@@ -655,7 +656,7 @@ public class TeamGUI {
         coachTeamNumberLabel.setBounds(20, 100, 100, 25);
         createCoachPanel.add(coachTeamNumberLabel);
 
-        coachTeamNumberField = new JTextField();
+        JTextField coachTeamNumberField = new JTextField();
         coachTeamNumberField.setBounds(150, 100, 200, 25);
         createCoachPanel.add(coachTeamNumberField);
 
@@ -718,7 +719,7 @@ public class TeamGUI {
         readTeamPanel.add(teamNumberLabel);
 
         //element to input the team number
-        teamNumberField = new JTextField();
+        JTextField teamNumberField = new JTextField();
         teamNumberField.setBounds(150, 20, 200, 25);
         readTeamPanel.add(teamNumberField);
 
@@ -786,7 +787,7 @@ public class TeamGUI {
 
                         columnModel.getColumn(3).setHeaderValue(teamDetails.getColumnName(3));
                         columnModel.getColumn(3).setResizable(true);
-                        columnModel.getColumn(3).setPreferredWidth(managerNameField.getWidth());
+                        columnModel.getColumn(3).setPreferredWidth(100);
 
                         // set the table to the scroll pane
                         teamDetails.setColumnModel(columnModel);
@@ -826,7 +827,7 @@ public class TeamGUI {
         PlayerIDLabel.setBounds(20, 20, 100, 25);
         readPlayerPanel.add(PlayerIDLabel);
 
-        playerIDField = new JTextField();
+        JTextField playerIDField = new JTextField();
         playerIDField.setBounds(150, 20, 200, 25);
         readPlayerPanel.add(playerIDField);
 
@@ -878,7 +879,7 @@ public class TeamGUI {
 
                         columnModel.getColumn(3).setHeaderValue(playerDetails.getColumnName(3));
                         columnModel.getColumn(3).setResizable(true);
-                        columnModel.getColumn(3).setPreferredWidth(ageField.getWidth());
+                        columnModel.getColumn(3).setPreferredWidth(100);
 
                         playerDetails.setColumnModel(columnModel);
                         playerDetails.doLayout();
@@ -914,7 +915,7 @@ public class TeamGUI {
         coachIDLabel.setBounds(20, 20, 100, 25);
         readCoachPanel.add(coachIDLabel);
 
-        coachIDField = new JTextField();
+        JTextField coachIDField = new JTextField();
         coachIDField.setBounds(150, 20, 200, 25);
         readCoachPanel.add(coachIDField);
 
@@ -1016,7 +1017,7 @@ public class TeamGUI {
         teamNumberLabel.setBounds(20, 20, 100, 25);
         updateTeamPanel.add(teamNumberLabel);
 
-        teamNumberField = new JTextField();
+        JTextField teamNumberField = new JTextField();
         teamNumberField.setBounds(150, 20, 200, 25);
         updateTeamPanel.add(teamNumberField);
 
@@ -1024,7 +1025,7 @@ public class TeamGUI {
         nameLabel.setBounds(20, 60, 100, 25);
         updateTeamPanel.add(nameLabel);
 
-        nameField = new JTextField();
+        JTextField nameField = new JTextField();
         nameField.setBounds(150, 60, 200, 25);
         updateTeamPanel.add(nameField);
 
@@ -1032,7 +1033,7 @@ public class TeamGUI {
         cityLabel.setBounds(20, 100, 100, 25);
         updateTeamPanel.add(cityLabel);
 
-        cityField = new JTextField();
+        JTextField cityField = new JTextField();
         cityField.setBounds(150, 100, 200, 25);
         updateTeamPanel.add(cityField);
 
@@ -1040,7 +1041,7 @@ public class TeamGUI {
         managerNameLabel.setBounds(20, 140, 100, 25);
         updateTeamPanel.add(managerNameLabel);
 
-        managerNameField = new JTextField();
+        JTextField managerNameField = new JTextField();
         managerNameField.setBounds(150, 140, 200, 25);
         updateTeamPanel.add(managerNameField);
 
@@ -1104,7 +1105,7 @@ public class TeamGUI {
         playerIDLabel.setBounds(20, 20, 100, 25);
         updatePlayerPanel.add(playerIDLabel);
 
-        playerIDField = new JTextField();
+        JTextField playerIDField = new JTextField();
         playerIDField.setBounds(200, 20, 150, 25);
         updatePlayerPanel.add(playerIDField);
 
@@ -1112,7 +1113,7 @@ public class TeamGUI {
         leagueWideNumberLabel.setBounds(20, 60, 150, 25);
         updatePlayerPanel.add(leagueWideNumberLabel);
 
-        leagueWideNumberField = new JTextField();
+        JTextField leagueWideNumberField = new JTextField();
         leagueWideNumberField.setBounds(200, 60, 150, 25);
         updatePlayerPanel.add(leagueWideNumberField);
 
@@ -1120,7 +1121,7 @@ public class TeamGUI {
         nameLabel.setBounds(20, 100, 100, 25);
         updatePlayerPanel.add(nameLabel);
 
-        nameField = new JTextField();
+        JTextField nameField = new JTextField();
         nameField.setBounds(200, 100, 150, 25);
         updatePlayerPanel.add(nameField);
 
@@ -1128,7 +1129,7 @@ public class TeamGUI {
         ageLabel.setBounds(20, 140, 100, 25);
         updatePlayerPanel.add(ageLabel);
 
-        ageField = new JTextField();
+        JTextField ageField = new JTextField();
         ageField.setBounds(200, 140, 150, 25);
         updatePlayerPanel.add(ageField);
 
@@ -1193,7 +1194,7 @@ public class TeamGUI {
         coachIDLabel.setBounds(20, 20, 100, 25);
         updateCoachPanel.add(coachIDLabel);
 
-        coachIDField = new JTextField();
+        JTextField coachIDField = new JTextField();
         coachIDField.setBounds(150, 20, 200, 25);
         updateCoachPanel.add(coachIDField);
 
@@ -1201,7 +1202,7 @@ public class TeamGUI {
         coachNameLabel.setBounds(20, 60, 100, 25);
         updateCoachPanel.add(coachNameLabel);
 
-        coachNameField = new JTextField();
+        JTextField coachNameField = new JTextField();
         coachNameField.setBounds(150, 60, 200, 25);
         updateCoachPanel.add(coachNameField);
 
@@ -1209,7 +1210,7 @@ public class TeamGUI {
         telephoneNumberLabel.setBounds(20, 100, 100, 25);
         updateCoachPanel.add(telephoneNumberLabel);
 
-        telephoneNumberField = new JTextField();
+        JTextField telephoneNumberField = new JTextField();
         telephoneNumberField.setBounds(150, 100, 200, 25);
         updateCoachPanel.add(telephoneNumberField);
 
@@ -1217,7 +1218,7 @@ public class TeamGUI {
         coachTeamNumberLabel.setBounds(20, 140, 100, 25);
         updateCoachPanel.add(coachTeamNumberLabel);
 
-        coachTeamNumberField = new JTextField();
+        JTextField coachTeamNumberField = new JTextField();
         coachTeamNumberField.setBounds(150, 140, 200, 25);
         updateCoachPanel.add(coachTeamNumberField);
 
@@ -1284,7 +1285,7 @@ public class TeamGUI {
         teamNumberLabel.setBounds(20, 20, 100, 25);
         deleteTeamPanel.add(teamNumberLabel);
 
-        teamNumberField = new JTextField();
+        JTextField teamNumberField = new JTextField();
         teamNumberField.setBounds(150, 20, 200, 25);    
         deleteTeamPanel.add(teamNumberField);
 
@@ -1387,7 +1388,7 @@ public class TeamGUI {
         coachIDLabel.setBounds(20, 20, 100, 25);
         deleteCoachPanel.add(coachIDLabel);
 
-        coachIDField = new JTextField();
+        JTextField coachIDField = new JTextField();
         coachIDField.setBounds(150, 20, 200, 25);
         deleteCoachPanel.add(coachIDField);
 
