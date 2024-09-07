@@ -1,30 +1,19 @@
-# Tennis-League-MySQL-Front-End
-### Tools and Technologies
-- Java Development Kit (JDK) 
-- Integrated Development Environment (IDE) like Eclipse or IntelliJ IDEA 
-- JDBC library for database connection 
-- The sample Assignment Seed Data1.sql we used in week 3 
+# Tennis League MySQL Front-End
+## Introduction
+This project is a Java-based front-end application designed to interact with a MySQL database for managing tennis league teams, players, and coaches. Built using Java Swing, it allows users to create, update, and delete records for teams, players, and coaches while viewing lists of each entity.
 
-### Database Setup
-- Use the provided SQL seed data to create the initial database schema and populate it with sample data. 
-- Database should include tables for Teams, Players, and Coaches. 
-- Ensure proper relationships and constraints are set between tables. 
+## Features
+- Add, edit, and delete teams, players, and coaches.
+- View lists of teams, players, and coaches with detailed information.
+- Database schema setup for relational data management.
 
-## Functional Requirements:
-### Team Management: 
-- Add a Team: Users can add new team records to the database. 
-- Edit a Team: Users can select an existing team to edit its details. 
-- Delete a Team: Users can remove a team from the database. 
+## Technologies Used
+- Java (Swing)
+- MySQL
+- JDBC (Java Database Connectivity)
+- SQL
 
-### Player Management: 
-- Add a Player: Users can add new player records, associating them with teams. 
-- Edit a Player: Users can update player details. 
-- Delete a Player: Users can delete player records from the database. 
-
-### Coach Management: 
-- Add a Coach: Users can add coaches, specifying the team they coach. 
-- Edit a Coach: Users can edit coach details. 
-- Delete a Coach: Users can remove coach records. 
-
-### View Records: 
-- Users can view lists of teams, players, and coaches with details. 
+## Setup Instructions
+1. Ensure MySQL is installed and configured.
+2. Use the provided SQL seed data to set up the database schema.
+3. Compile and run the Java Swing application to interface with the database.
